@@ -38,5 +38,10 @@ namespace SnakeWithBrain
         {
             return AreEqualPos(p.X, p.Y);
         }
+
+        public override string ToString()
+        {
+            return X + ":" + Y;
+        }
     }
 }

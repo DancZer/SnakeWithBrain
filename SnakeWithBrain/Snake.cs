@@ -8,15 +8,21 @@ namespace SnakeWithBrain
 {
     class Snake : IMoveable, IDrawable, IControl
     {
+        public Item Head
+        {
+            get { return _head; }
+        }
+
         private int _dirX;
         private int _dirY;
 
         private readonly Head _head;
         private readonly List<Body> _segments = new List<Body>();
+        private Body _previousTailPos;
 
         private int _increaseWith;
 
-        public Snake(int x, int y, int startCount = 6)
+        public Snake(int x, int y, int startCount = 3)
         {
             _head = new Head(x, y);
 
@@ -35,9 +41,9 @@ namespace SnakeWithBrain
 
         public void Draw(GameDrawer drawer)
         {
-            foreach (var point in _segments)
+            for (int i = _segments.Count - 1; i >= 0; i--)
             {
-                point.Draw(drawer);
+                _segments[i].Draw(drawer);
             }
         }
 
@@ -51,10 +57,6 @@ namespace SnakeWithBrain
             return _segments;
         }
 
-        public Item GetHeadPos()
-        {
-            return _head;
-        }
 
         public void Iterate()
         {
@@ -64,7 +66,8 @@ namespace SnakeWithBrain
                 _increaseWith--;
             }
 
-            if (_segments.Count > 1) { 
+            if (_segments.Count > 1) {
+                _previousTailPos = new Body(_segments.Last());
                 for (int i = _segments.Count - 1; i > 0; i--)
                 {
                     _segments[i].MoveTo(_segments[i-1]);
@@ -72,6 +75,24 @@ namespace SnakeWithBrain
             }
             
             _head.MoveTo(_head.X + _dirX, _head.Y + _dirY);
+        }
+
+        public void RollBack()
+        {
+            if (_segments.Count > 1)
+            {
+                for (int i = 0; i < _segments.Count - 1; i++)
+                {
+                    _segments[i].MoveTo(_segments[i+1]);
+                }
+
+                _segments.Last().MoveTo(_previousTailPos);
+                _previousTailPos = new Body(_segments.Last());
+            }
+            else
+            {
+                _head.MoveTo(_head.X - _dirX, _head.Y - _dirY);
+            }
         }
 
         private void CreateNewTail(int offsetX = 0, int offsetY = 0)

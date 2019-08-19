@@ -14,7 +14,7 @@ namespace SnakeWithBrain
 
         public virtual void Draw(GameDrawer drawer)
         {
-            drawer.FillRect(X, Y, Brushes.WhiteSmoke);
+            drawer.FillRect(X, Y, Brushes.White);
         }
     }
 }
