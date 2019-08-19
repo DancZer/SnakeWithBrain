@@ -23,6 +23,8 @@ namespace SnakeWithBrain
         public MainWindow()
         {
             InitializeComponent();
+
+            Game.Focus();
         }
     }
 }

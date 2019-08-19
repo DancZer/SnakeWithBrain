@@ -55,6 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Fruit.cs" />
+    <Compile Include="Logic.cs" />
+    <Compile Include="GameArea.cs" />
+    <Compile Include="Head.cs" />
+    <Compile Include="IControl.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="IMoveable.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Body.cs" />
+    <Compile Include="GameDrawer.cs" />
+    <Compile Include="Snake.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +80,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
