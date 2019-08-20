@@ -12,7 +12,7 @@ namespace SnakeWithBrain
         {
         }
 
-        public virtual void Draw(GameDrawer drawer)
+        public virtual void Draw(Drawer drawer)
         {
             drawer.FillRect(X, Y, Brushes.White);
         }

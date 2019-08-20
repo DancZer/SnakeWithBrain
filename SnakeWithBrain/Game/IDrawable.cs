@@ -9,6 +9,6 @@ namespace SnakeWithBrain
 {
     interface IDrawable
     {
-        void Draw(GameDrawer drawer);
+        void Draw(Drawer drawer);
     }
 }

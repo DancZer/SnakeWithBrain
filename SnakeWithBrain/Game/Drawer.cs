@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace SnakeWithBrain
 {
-    class GameDrawer
+    class Drawer
     {
         private readonly int _mapWidth;
         private readonly int _mapHeight;
@@ -20,7 +20,7 @@ namespace SnakeWithBrain
         private double _actualWidth;
         private double _actualHeight;
 
-        public GameDrawer(int mapWidth, int mapHeight, Pen gridPen)
+        public Drawer(int mapWidth, int mapHeight, Pen gridPen)
         {
             this._mapWidth = mapWidth;
             this._mapHeight = mapHeight;

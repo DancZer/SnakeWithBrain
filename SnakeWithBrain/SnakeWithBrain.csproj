@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConsoleTableExt, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConsoleTableExt.2.0.2\lib\net45\ConsoleTableExt.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,18 +61,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SnakeException.cs" />
-    <Compile Include="Fruit.cs" />
-    <Compile Include="Logic.cs" />
-    <Compile Include="GameArea.cs" />
-    <Compile Include="Head.cs" />
-    <Compile Include="IControl.cs" />
-    <Compile Include="IDrawable.cs" />
-    <Compile Include="IMoveable.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Body.cs" />
-    <Compile Include="GameDrawer.cs" />
-    <Compile Include="Snake.cs" />
+    <Compile Include="BrainWindow.xaml.cs">
+      <DependentUpon>BrainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Brain\Dendrite.cs" />
+    <Compile Include="Brain\NeuralData.cs" />
+    <Compile Include="Brain\NetworkModelView.cs" />
+    <Compile Include="Brain\SimpleNeuralNet.cs" />
+    <Compile Include="Brain\NeuralLayer.cs" />
+    <Compile Include="Brain\NetworkModel.cs" />
+    <Compile Include="Brain\Neuron.cs" />
+    <Compile Include="Brain\Pulse.cs" />
+    <Compile Include="LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game\SnakeException.cs" />
+    <Compile Include="Game\Fruit.cs" />
+    <Compile Include="Game\Logic.cs" />
+    <Compile Include="Game\GameArea.cs" />
+    <Compile Include="Game\Head.cs" />
+    <Compile Include="Game\IControl.cs" />
+    <Compile Include="Game\IDrawable.cs" />
+    <Compile Include="Game\IMoveable.cs" />
+    <Compile Include="Game\Item.cs" />
+    <Compile Include="Game\Body.cs" />
+    <Compile Include="Game\Drawer.cs" />
+    <Compile Include="Game\Snake.cs" />
+    <Page Include="BrainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,7 +109,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Map.cs" />
+    <Compile Include="Game\Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +127,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

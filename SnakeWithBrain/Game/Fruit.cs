@@ -16,7 +16,7 @@ namespace SnakeWithBrain
         {
         }
 
-        public void Draw(GameDrawer drawer)
+        public void Draw(Drawer drawer)
         {
             drawer.FillRect(X, Y, Brushes.Red);
         }

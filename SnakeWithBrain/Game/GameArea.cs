@@ -18,14 +18,12 @@ namespace SnakeWithBrain
         private Pen mainPen = new Pen(Brushes.Black, 1.0);
 
         private Logic _logic = new Logic(GameSize, GameSize);
-        private GameDrawer _drawer = new GameDrawer(GameSize, GameSize, new Pen(Brushes.Black, 2));
+        private Drawer _drawer = new Drawer(GameSize, GameSize, new Pen(Brushes.Black, 2));
         
         private int _iteration = 0;
 
         public GameArea()
         {
-            KeyDown+= HandleKeyPress;
-
             _timer.AutoReset = true;
             _timer.Elapsed += TimerOnElapsed;
             _timer.Enabled = true;
@@ -39,7 +37,7 @@ namespace SnakeWithBrain
             };
         }
 
-        private void HandleKeyPress(object sender, KeyEventArgs e)
+        public void HandleKeyPress(object sender, KeyEventArgs e)
         {
             if (_timer == null) return;
 

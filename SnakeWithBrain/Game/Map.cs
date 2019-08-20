@@ -35,7 +35,7 @@ namespace SnakeWithBrain
             _fruitGeneratorCache = new int[Width,Height];
         }
         
-        public void Draw(GameDrawer drawer)
+        public void Draw(Drawer drawer)
         {
             if (_fruit != null)
             {

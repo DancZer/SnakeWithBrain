@@ -13,7 +13,7 @@ namespace SnakeWithBrain
         {
         }
 
-        public override void Draw(GameDrawer drawer)
+        public override void Draw(Drawer drawer)
         {
             drawer.FillRect(X, Y, Brushes.Green);
         }

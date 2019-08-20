@@ -40,7 +40,7 @@ namespace SnakeWithBrain
             State = GameState.InProgress;
         }
 
-        public void Draw(GameDrawer drawer)
+        public void Draw(Drawer drawer)
         {
             Map.Draw(drawer);
             Snake.Draw(drawer);

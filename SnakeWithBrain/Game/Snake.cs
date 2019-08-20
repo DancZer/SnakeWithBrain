@@ -39,7 +39,7 @@ namespace SnakeWithBrain
             _increaseWith = 1;
         }
 
-        public void Draw(GameDrawer drawer)
+        public void Draw(Drawer drawer)
         {
             for (int i = _segments.Count - 1; i >= 0; i--)
             {
